@@ -289,7 +289,8 @@
                         },
                         {
                             "Action": [
-                                "codedeploy:CreateApplication"
+                                "codedeploy:CreateApplication",
+                                "codedeploy:CreateDeploymentGroup"
                             ],
                             "Resource": [
                                 "*"
