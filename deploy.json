@@ -291,9 +291,9 @@
                             "Action": [
                                 "codedeploy:CreateApplication"
                             ],
-                            "Resource": {
-                                "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}::*"
-                            },
+                            "Resource": [
+                                "*"
+                            ],
                             "Effect": "Allow"
                         }
                     ]
