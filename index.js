@@ -45,6 +45,38 @@ exports.handler = (event, context, callback) => {
     });
 }
 
+exports.bgcolour = (event, context, callback) => {
+
+  var originURL = process.env.ORIGIN_URL || '*';
+
+  /*
+  if (!event.requestContext.authorizer) {
+    errorResponse('Authorization not configured', context.awsRequestId, callback);
+    return;
+  }
+  const username = event.requestContext.authorizer.claims['cognito:username'];
+  */
+
+  emitLambdaAge();
+
+  // This variable can be updated and checked in to your repository
+  // to update the number of SAM squirrels on the screen.
+  var samColor = '#967da7';
+
+  console.log('The background colour: ' + samColor);
+
+  callback(null, {
+      "statusCode": 200,
+      "body": samColor,
+      "headers":
+      {
+          "Access-Control-Allow-Headers": "Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token",
+          "Access-Control-Allow-Methods": "GET,OPTIONS",
+          "Access-Control-Allow-Origin": originURL
+      }
+  });
+}
+
 function emitLambdaAge() {
     var now = moment();
     var lambdaAnnouncement = moment('2014-11-04');
