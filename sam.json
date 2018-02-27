@@ -44,7 +44,8 @@
                 "CodeUri": "./",
                 "Environment": {
                     "Variables": {
-                        "ORIGIN_URL": { "Ref": "OriginUrl" }
+                        "ORIGIN_URL": { "Ref": "OriginUrl" },
+                        "BG_COLOUR": "#82E0AA"
                     }
                 },
                 "Events": {
