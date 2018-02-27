@@ -29,6 +29,10 @@
                             "Method": "get"
                         }
                     }
+                },
+                "AutoPublishAlias": "live",
+                "DeploymentPreference": {
+                    "Type": "Linear10PercentEvery1Minute"
                 }
             }
         }
