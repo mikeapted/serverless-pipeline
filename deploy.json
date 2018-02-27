@@ -295,7 +295,8 @@
                                 "codedeploy:DeleteApplication",
                                 "codedeploy:DeleteDeployment",
                                 "codedeploy:DeleteDeploymentGroup",
-                                "codedeploy:GetDeploymentConfig"
+                                "codedeploy:GetDeploymentConfig",
+                                "codedeploy:RegisterApplicationRevision"
                             ],
                             "Resource": [
                                 "*"
