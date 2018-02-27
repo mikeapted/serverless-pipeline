@@ -124,7 +124,9 @@ var authToken;
             DESIRED_SAM_COUNT = data;
         }
       });
-
+  }, TIME_BETWEEN_COUNT_UPDATE_MS);
+  
+  setInterval(() => {
       $.ajax({
         url: GET_BG_COLOUR_URL,
         // Placeholder for Lambda authentication when CORS is better supported through SAM.
