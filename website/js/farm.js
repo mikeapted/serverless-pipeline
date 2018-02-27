@@ -64,7 +64,7 @@ var authToken;
   }
 
   function update() {
-      console.log(BG_COLOUR, game);
+      // console.log(BG_COLOUR, game);
       game.physics.arcade.collide(sprites);
       game.stage.backgroundColor = BG_COLOUR;
 
@@ -120,6 +120,7 @@ var authToken;
             Authorization: authToken
         }, */
         success: function(data) {
+            console.log(data);
             DESIRED_SAM_COUNT = data;
         }
       });
@@ -133,6 +134,7 @@ var authToken;
             Authorization: authToken
         }, */
         success: function(data) {
+            console.log(data);
             BG_COLOUR = data;
         }
       });
