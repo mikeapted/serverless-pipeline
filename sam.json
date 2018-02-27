@@ -35,6 +35,32 @@
                     "Type": "Linear10PercentEvery1Minute"
                 }
             }
+        },
+        "GetSAMBackgroundColour": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Handler": "bgcolour.handler",
+                "Runtime": "nodejs4.3",
+                "CodeUri": "./",
+                "Environment": {
+                    "Variables": {
+                        "ORIGIN_URL": { "Ref": "OriginUrl" }
+                    }
+                },
+                "Events": {
+                    "GetResource": {
+                        "Type": "Api",
+                        "Properties": {
+                            "Path": "/bgcolour",
+                            "Method": "get"
+                        }
+                    }
+                },
+                "AutoPublishAlias": "live",
+                "DeploymentPreference": {
+                    "Type": "AllAtOnce"
+                }
+            }
         }
     },
     "Outputs": {
