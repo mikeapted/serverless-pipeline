@@ -286,6 +286,15 @@
                                 "Fn::Sub": "arn:aws:cloudformation:${AWS::Region}:aws:transform/Serverless-2016-10-31"
                             },
                             "Effect": "Allow"
+                        },
+                        {
+                            "Action": [
+                                "codedeploy:CreateApplication"
+                            ],
+                            "Resource": {
+                                "Fn::Sub": "arn:aws:apigateway:${AWS::Region}::*"
+                            },
+                            "Effect": "Allow"
                         }
                     ]
                 },
