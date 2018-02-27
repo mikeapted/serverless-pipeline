@@ -64,7 +64,6 @@ var authToken;
   }
 
   function update() {
-      // console.log(BG_COLOUR, game);
       game.physics.arcade.collide(sprites);
       game.stage.backgroundColor = BG_COLOUR;
 
@@ -138,6 +137,9 @@ var authToken;
         success: function(data) {
             console.log(data);
             BG_COLOUR = data;
+        },
+        error: function(xhr, status, error) {
+            console.log('Error', status, error);
         }
       });
   }, TIME_BETWEEN_COUNT_UPDATE_MS);
