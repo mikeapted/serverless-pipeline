@@ -14,7 +14,7 @@
             "Properties": {
                 "Handler": "index.handler",
                 "Runtime": "nodejs4.3",
-                "CodeUri": "./index.js",
+                "CodeUri": "./",
                 "Environment": {
                     "Variables": {
                         "ORIGIN_URL": { "Ref": "OriginUrl" },
@@ -39,9 +39,9 @@
         "GetSAMBackgroundColour": {
             "Type": "AWS::Serverless::Function",
             "Properties": {
-                "Handler": "bgcolour.handler",
+                "Handler": "index.bgcolour",
                 "Runtime": "nodejs4.3",
-                "CodeUri": "./bgcolour.js",
+                "CodeUri": "./",
                 "Environment": {
                     "Variables": {
                         "ORIGIN_URL": { "Ref": "OriginUrl" }
