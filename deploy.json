@@ -292,7 +292,7 @@
                                 "codedeploy:CreateApplication"
                             ],
                             "Resource": {
-                                "Fn::Sub": "arn:aws:apigateway:${AWS::Region}::*"
+                                "Fn::Sub": "arn:aws:codedeploy:${AWS::Region}::*"
                             },
                             "Effect": "Allow"
                         }
