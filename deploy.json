@@ -289,14 +289,7 @@
                         },
                         {
                             "Action": [
-                                "codedeploy:CreateApplication",
-                                "codedeploy:CreateDeployment",
-                                "codedeploy:CreateDeploymentGroup",
-                                "codedeploy:DeleteApplication",
-                                "codedeploy:DeleteDeployment",
-                                "codedeploy:DeleteDeploymentGroup",
-                                "codedeploy:GetDeploymentConfig",
-                                "codedeploy:RegisterApplicationRevision"
+                                "codedeploy:*"
                             ],
                             "Resource": [
                                 "*"
