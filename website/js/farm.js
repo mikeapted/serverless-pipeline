@@ -64,9 +64,10 @@ var authToken;
   }
 
   function update() {
+      console.log(BG_COLOUR, game);
       game.physics.arcade.collide(sprites);
       game.stage.backgroundColor = BG_COLOUR;
-      
+
       var countToChange = DESIRED_SAM_COUNT - CURRENT_SAM_COUNT;
 
       samCountUpdate(countToChange);
