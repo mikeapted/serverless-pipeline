@@ -290,8 +290,11 @@
                         {
                             "Action": [
                                 "codedeploy:CreateApplication",
+                                "codedeploy:CreateDeployment",
                                 "codedeploy:CreateDeploymentGroup",
-                                "codedeploy:DeleteApplication"
+                                "codedeploy:DeleteApplication",
+                                "codedeploy:DeleteDeployment",
+                                "codedeploy:DeleteDeploymentGroup"
                             ],
                             "Resource": [
                                 "*"
