@@ -28,8 +28,10 @@ var authToken;
   var DESIRED_SAM_COUNT = 1;
   var CURRENT_SAM_COUNT = 1;
   var MAX_SAM_CHANGE = 10;
+  var BG_COLOUR = '#967da7';
   var LAST_CHANGE_TIME = Date.now();
   var GET_SAM_COUNT_URL = _config.api.invokeUrl + '/sam';
+  var GET_BG_COLOUR_URL = _config.api.invokeUrl + '/bgcolour';
   var TIME_BETWEEN_COUNT_UPDATE_MS = 4000;
 
   function preload() {
@@ -39,7 +41,7 @@ var authToken;
 
   function create() {
       game.stage.disableVisibilityChange = true;
-      game.stage.backgroundColor = '#967da7';
+      game.stage.backgroundColor = BG_COLOUR;
       sprites = game.add.physicsGroup(Phaser.Physics.ARCADE);
       createSprites(DESIRED_SAM_COUNT);
   }
@@ -63,7 +65,8 @@ var authToken;
 
   function update() {
       game.physics.arcade.collide(sprites);
-
+      game.stage.backgroundColor = BG_COLOUR;
+      
       var countToChange = DESIRED_SAM_COUNT - CURRENT_SAM_COUNT;
 
       samCountUpdate(countToChange);
@@ -117,6 +120,19 @@ var authToken;
         }, */
         success: function(data) {
             DESIRED_SAM_COUNT = data;
+        }
+      });
+
+      $.ajax({
+        url: GET_BG_COLOUR_URL,
+        // Placeholder for Lambda authentication when CORS is better supported through SAM.
+        // See: https://github.com/awslabs/serverless-application-model/issues/23
+        // Currently, page is redirected back to sign-ni page based on presence of auth token.
+        /* headers: {
+            Authorization: authToken
+        }, */
+        success: function(data) {
+            BG_COLOUR = data;
         }
       });
   }, TIME_BETWEEN_COUNT_UPDATE_MS);
