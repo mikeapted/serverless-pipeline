@@ -32,14 +32,14 @@
                 },
                 "AutoPublishAlias": "live",
                 "DeploymentPreference": {
-                    "Type": "Canary10Percent5Minutes"
+                    "Type": "AllAtOnce"
                 }
             }
         },
         "GetSAMBackgroundColour": {
             "Type": "AWS::Serverless::Function",
             "Properties": {
-                "Handler": "index.bgcolour",
+                "Handler": "bgcolour.handler",
                 "Runtime": "nodejs4.3",
                 "CodeUri": "./",
                 "Environment": {
