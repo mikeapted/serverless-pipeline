@@ -77,8 +77,10 @@ var Dashboard = window.Dashboard || {};
             Username: toUsername(email),
             Password: password
         });
+        console.log(authenticationDetails);
 
         var cognitoUser = createCognitoUser(email);
+        console.log(cognitoUser);
         cognitoUser.authenticateUser(authenticationDetails, {
             onSuccess: onSuccess,
             onFailure: onFailure
@@ -146,6 +148,7 @@ var Dashboard = window.Dashboard || {};
                 window.location.href = redirectLoginUrl;
             },
             function signinError(err) {
+                console.log(email, password, err);
                 alert(err);
             }
         );
